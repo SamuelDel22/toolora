@@ -3,3 +3,12 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/styles.css
+  Cache-Control: public, max-age=86400
+
+/app.js
+  Cache-Control: public, max-age=3600
+
+/*.html
+  Cache-Control: public, max-age=3600

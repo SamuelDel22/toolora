@@ -1,52 +1,45 @@
 # Toolora
 
-Toolora es una plataforma estática de herramientas gratuitas. La primera versión no necesita backend ni base de datos y puede publicarse en un hosting estático.
+Plataforma estática de herramientas gratuitas. No necesita backend ni base de datos para la versión actual.
 
-## Herramientas incluidas
+## Herramientas
+1. Calculadora de porcentajes.
+2. Utilidades de texto.
+3. Generador de contraseñas.
+4. Conversor de imágenes.
+5. Generador de códigos QR (QRCode.js desde CDN).
+6. Calculadora de precios.
+7. Generador de ideas de nombres.
+8. Creador de hoja de vida.
 
-- Calculadora de porcentajes.
-- Utilidades de texto.
-- Generador de contraseñas con `crypto.getRandomValues`.
-- Conversor y redimensionador de imágenes en el navegador.
-- Generador de códigos QR (requiere conexión para cargar la biblioteca QRCode.js desde CDN).
-- Calculadora de precios para pequeños negocios.
-- Generador local de ideas de nombres.
-- Creador de hoja de vida con impresión / Guardar PDF.
+## Publicar en Cloudflare Pages
+- Framework preset: **None**.
+- Build command: vacío.
+- Build output directory: `.` si `index.html` está en la raíz configurada.
+- Si subes la carpeta `toolora` completa al repositorio y no sus contenidos, configura Root directory como `toolora`.
+- Production branch: `main` o la rama principal real del repositorio.
+
+## SEO incluido
+- Títulos y descripciones en español.
+- URL canónica y metadatos Open Graph.
+- Datos estructurados básicos de WebSite.
+- `robots.txt` y sitemap XML con las páginas públicas.
+- Texto introductorio útil para explicar el contenido de la plataforma.
+
+## Páginas públicas
+- `privacidad.html`
+- `terminos.html`
+- `acerca.html`
+- `contacto.html`
+
+## Monetización
+No hay anuncios activos ni identificadores publicitarios ficticios. Consulta `ADSENSE_SETUP.md` para completar la configuración cuando tengas una cuenta de AdSense y el sitio cumpla los requisitos. Configura un correo real de soporte antes de solicitar revisión.
+
+## Privacidad y dependencias
+- No hay cuentas ni backend propio que almacene resultados.
+- La preferencia de tema se guarda localmente en el navegador.
+- QRCode.js se carga desde cdnjs y las fuentes desde Google Fonts.
+- Las páginas legales son una base informativa, no asesoría jurídica; actualízalas si cambias los servicios o el tratamiento de datos.
 
 ## Ejecutar localmente
-
-Abre `index.html` en un navegador moderno. Para evitar restricciones del navegador y probar como en producción, se recomienda usar un servidor estático local, por ejemplo:
-
-```bash
-python -m http.server 8000
-```
-
-Luego abre `http://localhost:8000`.
-
-## Publicar gratis en Cloudflare Pages
-
-1. Sube los archivos de este directorio a un repositorio de GitHub.
-2. En Cloudflare, abre Workers & Pages y crea una aplicación Pages conectada al repositorio.
-3. Como no se necesita compilación, deja el comando de build vacío y establece el directorio de salida en `/` o en el directorio raíz del repositorio, según el formulario actual.
-4. Despliega y prueba la URL generada en móvil y escritorio.
-5. Cambia el dominio de ejemplo de `robots.txt` y `sitemap.xml` por el dominio público real antes de promocionar el sitio.
-
-Los paneles de Cloudflare pueden cambiar; revisa las opciones vigentes durante la configuración.
-
-## Notas importantes
-
-- La función QR carga una biblioteca desde cdnjs; requiere conexión a internet. Si el CDN no está disponible, la función muestra un mensaje.
-- Se cargan fuentes de Google Fonts por CSS. Si no están disponibles, se usan fuentes de sistema.
-- No se integra publicidad real ni hay IDs publicitarios ficticios.
-- Los enlaces de privacidad, acerca de y contacto del pie de página son puntos de partida; antes del lanzamiento deben convertirse en páginas reales con contenido correcto. El correo `hola@toolora.example` es un marcador y debe reemplazarse o quitarse.
-- No hay analítica ni envío de los datos de las herramientas a un backend. La preferencia de tema se guarda localmente en el navegador.
-- La página no incluye cuentas de usuario ni guarda resultados de herramientas.
-
-## Antes del lanzamiento público
-
-- [ ] Reemplazar `TU-DOMINIO.example` en `robots.txt` y `sitemap.xml`.
-- [ ] Corregir o retirar el correo de contacto de ejemplo.
-- [ ] Crear páginas reales para privacidad, términos, acerca de y contacto.
-- [ ] Probar funciones y diseño en Safari iOS, Chrome Android y escritorio.
-- [ ] Ejecutar pruebas de accesibilidad, rendimiento y seguridad.
-- [ ] Confirmar los requisitos legales y de publicidad aplicables.
+Abre `index.html` o ejecuta `python -m http.server 8000` y visita `http://localhost:8000`.
