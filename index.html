@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="Herramientas gratuitas para calcular, convertir, crear y organizar. Rápidas, sencillas y listas para usar desde tu navegador.">
+  <meta property="og:title" content="Toolora | Herramientas útiles, sin complicaciones">
+  <meta property="og:description" content="Calcula, convierte, crea y organiza con herramientas gratuitas que funcionan directamente en tu navegador.">
+  <meta property="og:type" content="website">
+  <title>Toolora | Herramientas útiles, sin complicaciones</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="announcement"><span class="announcement-dot"></span> Herramientas gratuitas para hacer más en menos tiempo <span class="announcement-arrow">↗</span></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Toolora, inicio"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a>
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#sobre">Cómo funciona</a>
+    </nav>
+    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
+  </header>
+  <main id="inicio">
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> TU CAJA DE HERRAMIENTAS DIGITAL</div>
+        <h1>Menos vueltas.<br><span>Más cosas hechas.</span></h1>
+        <p class="hero-description">Herramientas sencillas para resolver tareas reales. Calcula, convierte, crea y sigue con tu día.</p>
+        <div class="hero-search"><span class="search-icon" aria-hidden="true">⌕</span><label class="sr-only" for="toolSearch">Buscar una herramienta</label><input id="toolSearch" type="search" placeholder="¿Qué necesitas hacer?" autocomplete="off"><kbd>↵</kbd></div>
+        <div class="quick-tags"><span>Prueba:</span><button data-search="porcentaje">Porcentajes</button><button data-search="contraseña">Contraseñas</button><button data-search="imagen">Imágenes</button></div>
+      </div>
+      <div class="hero-visual" aria-label="Vista conceptual de herramientas digitales">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="visual-note note-top"><span class="note-icon green">↗</span><div><strong>Listo en segundos</strong><small>Sin complicaciones</small></div></div>
+        <div class="visual-board">
+          <div class="board-top"><span class="board-label">TU ESPACIO DE TRABAJO</span><span class="board-status"><i></i> Disponible</span></div>
+          <div class="board-feature"><div class="feature-icon">%</div><div><small>CALCULADORA</small><strong>25% de descuento</strong></div><div class="feature-result">−$25.000</div></div>
+          <div class="board-feature"><div class="feature-icon blue">Aa</div><div><small>TEXTO</small><strong>Todo más ordenado</strong></div><span class="mini-check">✓</span></div>
+          <div class="board-feature"><div class="feature-icon orange">⌁</div><div><small>IMÁGENES</small><strong>Optimiza tus archivos</strong></div><span class="mini-check">✓</span></div>
+          <div class="board-footer"><span>Tu tiempo vale.</span><span>Toolora®</span></div>
+        </div>
+        <div class="visual-note note-bottom"><span class="note-icon dark">✳</span><div><strong>Privacidad primero</strong><small>Procesamiento local cuando es posible</small></div></div>
+        <span class="visual-star star-one">✳</span><span class="visual-star star-two">✳</span>
+      </div>
+    </section>
+
+    <section class="trust-strip wrap" id="sobre"><div><span class="trust-symbol">↗</span><strong>Sin registro</strong><span>Empieza de una</span></div><div><span class="trust-symbol">◈</span><strong>Gratis para usar</strong><span>Sin pagar por cada tarea</span></div><div><span class="trust-symbol">⌁</span><strong>En tu navegador</strong><span>Varias herramientas procesan localmente</span></div></section>
+
+    <section class="tools-section wrap" id="herramientas">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> HECHAS PARA EL DÍA A DÍA</div><h2>¿Qué vas a resolver <span>hoy?</span></h2></div><p>Pequeñas herramientas que te ahorran tiempo. Elige una y ponte en marcha.</p></div>
+      <div class="category-filter" id="categoryFilter" role="group" aria-label="Filtrar herramientas"><button class="filter-chip active" data-category="todas">Todas <span>8</span></button><button class="filter-chip" data-category="productividad">Productividad</button><button class="filter-chip" data-category="texto">Texto</button><button class="filter-chip" data-category="imagenes">Imágenes</button><button class="filter-chip" data-category="negocios">Negocios</button></div>
+      <div class="tool-grid" id="toolGrid">
+        <button class="tool-card featured-card" data-tool="porcentajes" data-category="productividad" data-keywords="porcentaje calculadora descuento aumento variacion matematicas">
+          <div class="tool-card-top"><span class="tool-icon icon-lime">%</span><span class="tool-tag">MÁS USADA</span><span class="card-arrow">↗</span></div><h3>Calculadora de porcentajes</h3><p>Descuentos, aumentos y variaciones sin sacar la calculadora del cajón.</p><div class="tool-card-bottom"><span>Productividad</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="texto" data-category="texto" data-keywords="texto palabras caracteres mayusculas minusculas limpiar">
+          <div class="tool-card-top"><span class="tool-icon icon-blue">Aa</span><span class="card-arrow">↗</span></div><h3>Utilidades de texto</h3><p>Cuenta palabras, limpia espacios y cambia el formato de tus textos.</p><div class="tool-card-bottom"><span>Texto</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="password" data-category="productividad" data-keywords="contraseña password seguridad aleatoria segura">
+          <div class="tool-card-top"><span class="tool-icon icon-violet">⌘</span><span class="card-arrow">↗</span></div><h3>Generador de contraseñas</h3><p>Crea contraseñas aleatorias y ajusta su longitud y caracteres.</p><div class="tool-card-bottom"><span>Privacidad</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="imagenes" data-category="imagenes" data-keywords="imagen comprimir convertir webp jpg png foto tamaño archivo">
+          <div class="tool-card-top"><span class="tool-icon icon-orange">▧</span><span class="card-arrow">↗</span></div><h3>Conversor de imágenes</h3><p>Cambia el formato o el tamaño de una imagen desde tu navegador.</p><div class="tool-card-bottom"><span>Imágenes</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="qr" data-category="productividad" data-keywords="qr codigo enlace link escanear descargar">
+          <div class="tool-card-top"><span class="tool-icon icon-pink">▦</span><span class="card-arrow">↗</span></div><h3>Generador de códigos QR</h3><p>Convierte un enlace o un texto en un código QR descargable.</p><div class="tool-card-bottom"><span>Productividad</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="precios" data-category="negocios" data-keywords="precio negocio emprendimiento margen costo ganancia comision">
+          <div class="tool-card-top"><span class="tool-icon icon-lime">$</span><span class="card-arrow">↗</span></div><h3>Calculadora de precios</h3><p>Estima precios de venta teniendo en cuenta costos, margen y comisión.</p><div class="tool-card-bottom"><span>Negocios</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="nombres" data-category="negocios" data-keywords="nombre marca proyecto negocio ideas generador emprendimiento">
+          <div class="tool-card-top"><span class="tool-icon icon-blue">✳</span><span class="card-arrow">↗</span></div><h3>Ideas de nombres</h3><p>Combina palabras y conceptos para desbloquear nuevas ideas de marca.</p><div class="tool-card-bottom"><span>Creatividad</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+        <button class="tool-card" data-tool="cv" data-category="texto" data-keywords="hoja vida curriculum cv perfil experiencia empleo imprimir pdf">
+          <div class="tool-card-top"><span class="tool-icon icon-orange">▤</span><span class="card-arrow">↗</span></div><h3>Creador de hoja de vida</h3><p>Organiza tu perfil y genera una versión limpia lista para imprimir.</p><div class="tool-card-bottom"><span>Texto</span><span class="open-label">Abrir herramienta ↗</span></div>
+        </button>
+      </div>
+      <div class="no-results" id="noResults" hidden><strong>No encontramos esa herramienta.</strong><span>Prueba con otra palabra o cambia el filtro.</span><button id="clearSearch">Ver todas las herramientas</button></div>
+    </section>
+
+    <section class="bottom-cta wrap" id="categorias"><div class="cta-decoration">t.</div><div><div class="eyebrow"><span class="eyebrow-line"></span> MENOS FRICCIÓN, MÁS PROGRESO</div><h2>Tu próxima tarea puede<br>ser mucho <span>más fácil.</span></h2><p>Guarda Toolora y vuelve cuando necesites resolver algo rápido.</p></div><a href="#herramientas" class="cta-button">Explorar herramientas <span>↗</span></a></section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand footer-brand" href="#inicio"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a><p>Herramientas útiles. Sin complicaciones.</p><div class="footer-links"><a href="#sobre">Privacidad</a><a href="#sobre">Acerca de</a><a href="mailto:hola@toolora.example" id="contactLink">Contacto</a></div><span class="copyright">© <span id="year"></span> Toolora</span></footer>
+
+  <div class="modal-backdrop" id="toolModal" hidden>
+    <section class="tool-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header"><div><div class="eyebrow"><span class="eyebrow-line"></span> HERRAMIENTA GRATUITA</div><h2 id="modalTitle">Herramienta</h2></div><button class="modal-close" id="closeModal" aria-label="Cerrar herramienta">×</button></div>
+      <div class="modal-content" id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
