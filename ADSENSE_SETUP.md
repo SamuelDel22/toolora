@@ -1,19 +1,20 @@
-# Preparación de Google AdSense para Toolora
+# Google AdSense en Toolora
 
-La web está preparada a nivel de estructura, pero **no tiene anuncios activos**. No se añadió un script ni un `ads.txt` con un ID inventado.
+## Estado actual
+- El script oficial de AdSense está integrado con el identificador de editor `ca-pub-5937829012707992` en las páginas HTML.
+- El script de carga, por sí solo, **no crea espacios publicitarios** ni garantiza que se muestren anuncios.
+- No se ha añadido `ads.txt` porque debe publicarse con los datos exactos confirmados por el panel de AdSense.
+- La política de privacidad ya informa de la integración y enlaza los controles e información de Google.
 
-## Antes de solicitar revisión
-1. Publica el sitio y comprueba que las páginas de privacidad, términos, acerca de y contacto abren correctamente.
-2. Configura un correo de contacto real y actualiza `contacto.html`.
-3. Añade contenido original y útil que explique las herramientas, cómo se usan y sus limitaciones. Evita páginas vacías o contenido creado únicamente para mostrar anuncios.
-4. Prueba todas las herramientas en móvil y escritorio; corrige enlaces rotos, errores y recursos que no cargan.
-5. En Google AdSense, solicita revisión desde tu propia cuenta y sigue los pasos oficiales para verificar la propiedad del sitio. La aprobación no está garantizada.
+## Antes de activar anuncios
+1. Comprueba en tu cuenta de AdSense que el dominio y el identificador de editor corresponden a tu cuenta.
+2. Verifica que Google haya aprobado el sitio. La aprobación no está garantizada.
+3. Añade unidades publicitarias reales desde el panel y coloca los bloques donde no interfieran con las herramientas.
+4. Configura una plataforma de gestión del consentimiento (CMP) válida cuando sea necesaria para los países de tus visitantes. No basta con mostrar un aviso propio si no gestiona realmente las señales de consentimiento requeridas.
+5. Si AdSense solicita `ads.txt`, crea el archivo en la raíz pública con la línea exacta que indique tu cuenta. No inventes ni copies identificadores de terceros.
+6. Revisa la política de privacidad y las políticas vigentes de Google antes de publicar cambios.
 
-## Cuando AdSense te proporcione los datos
-- Inserta únicamente el código oficial que AdSense entregue para tu cuenta, en el lugar que indiquen sus instrucciones.
-- Si AdSense te pide `ads.txt`, crea ese archivo en la raíz pública con la línea exacta que te proporcione el panel. No copies líneas de otras webs ni inventes el publisher ID.
-- Respeta las políticas de consentimiento y privacidad aplicables a los visitantes de los países donde recibas tráfico.
+## Buenas prácticas
 - No hagas clic en tus propios anuncios ni pidas a otras personas que lo hagan.
-
-## Importante
-Tener páginas legales y sitemap no garantiza aprobación. AdSense evalúa el sitio completo, su contenido, navegación, originalidad, cumplimiento de políticas y otros factores. Consulta siempre la documentación vigente de Google AdSense.
+- No coloques anuncios sobre botones, formularios ni controles de las herramientas.
+- No afirmes que los anuncios están activos si no hay unidades publicitarias publicadas y servidas.

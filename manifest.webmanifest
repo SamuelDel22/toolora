@@ -1,0 +1,12 @@
+{
+  "name": "Toolora — Herramientas útiles",
+  "short_name": "Toolora",
+  "description": "Herramientas gratuitas para calcular, convertir, crear y organizar.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#111611",
+  "icons": [{"src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}
