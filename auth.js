@@ -106,11 +106,6 @@
         if (Array.isArray(meta.toolora_favorites)) localStorage.setItem('toolora-favorites-v1', JSON.stringify(meta.toolora_favorites));
         if (Array.isArray(meta.toolora_recent)) localStorage.setItem('toolora-recent-v1', JSON.stringify(meta.toolora_recent));
       } catch (_) {}
-      window.renderTooloraPersonalSpace?.();
-      const workspace = document.querySelector('#workspaceStatus');
-      if (workspace) workspace.textContent = 'Sincronización con tu cuenta';
-      const personalTitle = document.querySelector('#personalTitle');
-      if (personalTitle) personalTitle.innerHTML = 'Tu espacio, <span>contigo.</span>';
     }
   }
 
