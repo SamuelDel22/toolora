@@ -1,5 +1,5 @@
 const CACHE_NAME = 'toolora-static-v1';
-const APP_SHELL = ['/', '/index.html', '/styles.css', '/app.js', '/favicon.svg', '/manifest.webmanifest'];
+const APP_SHELL = ['/', '/index.html', '/styles.css', '/app.js', '/favicon.svg', '/manifest.webmanifest','/auth.js','/supabase-config.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
   self.skipWaiting();

@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="app.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="supabase-config.js"></script>
+  <script defer src="auth.js"></script>
 </head>
 <body>
   <div class="announcement"><span class="announcement-dot"></span> Herramientas gratuitas para hacer más en menos tiempo <span class="announcement-arrow">↗</span></div>
@@ -31,7 +34,7 @@
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#sobre">Cómo funciona</a><a href="#mi-toolora">Mi Toolora</a>
     </nav>
-    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
+    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><button class="account-button" id="accountButton" type="button"><span class="account-avatar">◌</span><span id="accountButtonLabel">Entrar</span></button><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
   </header>
   <main id="inicio">
     <section class="hero wrap">
@@ -57,13 +60,15 @@
       </div>
     </section>
 
+    <section class="proof-line wrap" aria-label="Ventajas de Toolora"><span>HECHO PARA USAR, NO PARA COMPLICAR</span><i></i><span>Sin instalaciones</span><i></i><span>Sin pasos innecesarios</span><i></i><span>En español</span></section>
+
     <section class="trust-strip wrap" id="sobre"><div><span class="trust-symbol">↗</span><strong>Sin registro</strong><span>Empieza de una</span></div><div><span class="trust-symbol">◈</span><strong>Gratis para usar</strong><span>Sin pagar por cada tarea</span></div><div><span class="trust-symbol">⌁</span><strong>En tu navegador</strong><span>Varias herramientas procesan localmente</span></div></section>
 
     <section class="tools-section wrap" id="herramientas">
       <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> HECHAS PARA EL DÍA A DÍA</div><h2>¿Qué vas a resolver <span>hoy?</span></h2></div><p>Pequeñas herramientas que te ahorran tiempo. Elige una y ponte en marcha.</p></div>
       <div class="category-filter" id="categoryFilter" role="group" aria-label="Filtrar herramientas"><button class="filter-chip active" data-category="todas">Todas <span>8</span></button><button class="filter-chip" data-category="productividad">Productividad</button><button class="filter-chip" data-category="texto">Texto</button><button class="filter-chip" data-category="imagenes">Imágenes</button><button class="filter-chip" data-category="negocios">Negocios</button></div>
       <section class="personal-space" id="mi-toolora" aria-labelledby="personalTitle">
-        <div class="personal-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO, EN ESTE DISPOSITIVO</div><h3 id="personalTitle">Vuelve a lo que <span>importa.</span></h3><p>Guarda tus herramientas favoritas y encuentra rápidamente las que usaste hace poco.</p></div><span class="local-pill">Se guarda solo aquí</span></div>
+        <div class="personal-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO, EN ESTE DISPOSITIVO</div><h3 id="personalTitle">Vuelve a lo que <span>importa.</span></h3><p>Guarda tus herramientas favoritas y encuentra rápidamente las que usaste hace poco. Con una cuenta, podrás recuperar tu espacio en otros dispositivos.</p></div><span class="local-pill" id="workspaceStatus">Solo en este dispositivo</span></div>
         <div class="personal-columns"><div><h4>Favoritas <span id="favoriteCount">0</span></h4><div class="personal-list" id="favoriteList"><p class="personal-empty">Aún no tienes favoritas. Abre una herramienta y pulsa “Guardar en favoritas”.</p></div></div><div><h4>Usadas recientemente</h4><div class="personal-list" id="recentList"><p class="personal-empty">Tus herramientas recientes aparecerán aquí.</p></div></div></div>
       </section>
       <div class="tool-grid" id="toolGrid">
@@ -109,6 +114,26 @@
     <section class="tool-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-header"><div><div class="eyebrow"><span class="eyebrow-line"></span> HERRAMIENTA GRATUITA</div><h2 id="modalTitle">Herramienta</h2></div><div class="modal-actions"><button class="favorite-toggle" id="modalFavorite" type="button">☆ Guardar en favoritas</button><button class="modal-close" id="closeModal" aria-label="Cerrar herramienta">×</button></div></div>
       <div class="modal-content" id="modalContent"></div>
+    </section>
+  </div>
+  <div class="auth-backdrop" id="authModal" hidden>
+    <section class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="auth-close" id="authClose" type="button" aria-label="Cerrar">×</button>
+      <div class="auth-brand"><span class="brand-mark">t<span>.</span></span><span>toolora</span></div>
+      <div class="auth-kicker">TU ESPACIO PERSONAL</div>
+      <h2 id="authTitle">Qué bueno tenerte aquí.</h2>
+      <p class="auth-intro">Entra o crea una cuenta para llevar tus favoritas contigo.</p>
+      <div class="auth-tabs" role="tablist" aria-label="Acceso"><button type="button" class="auth-tab active" data-auth-mode="login" role="tab" aria-selected="true">Iniciar sesión</button><button type="button" class="auth-tab" data-auth-mode="signup" role="tab" aria-selected="false">Crear cuenta</button></div>
+      <div class="oauth-stack"><button class="oauth-button" id="googleAuth" type="button"><span class="google-g">G</span> Continuar con Google</button><button class="oauth-button" id="appleAuth" type="button"><span class="apple-mark">●</span> Continuar con Apple</button></div>
+      <div class="auth-divider"><span>o con tu correo</span></div>
+      <form id="authForm" novalidate>
+        <label class="auth-label" for="authEmail">Correo electrónico</label><input id="authEmail" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+        <label class="auth-label" for="authPassword">Contraseña</label><input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+        <button class="auth-submit" id="authSubmit" type="submit">Entrar a mi cuenta <span>↗</span></button>
+      </form>
+      <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+      <p class="auth-footnote">Puedes usar Gmail, iCloud u otra dirección de correo. Tu correo solo se usa para gestionar tu cuenta.</p>
+      <button class="auth-logout" id="authLogout" type="button" hidden>Cerrar sesión</button>
     </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
