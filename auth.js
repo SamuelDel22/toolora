@@ -76,11 +76,8 @@
     }
   };
 
-  if (accountButton) {
-    accountButton.addEventListener('click', () => {
-      location.href = currentUser ? 'entrar.html' : 'entrar.html';
-    });
-  }
+  // The homepage account control is a normal link to entrar.html.
+  // Keeping navigation in the markup makes it work even if this script is unavailable.
 
   async function requireClient() {
     if (!configured) {

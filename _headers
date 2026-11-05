@@ -12,3 +12,12 @@
 
 /*.html
   Cache-Control: public, max-age=3600
+
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/auth.js
+  Cache-Control: no-cache, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache, must-revalidate
