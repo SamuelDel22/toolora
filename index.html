@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolora-9jq.pages.dev/">
   <meta property="og:locale" content="es_CO">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://toolora-9jq.pages.dev/">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"Toolora","url":"https://toolora-9jq.pages.dev/","inLanguage":"es-CO","description":"Herramientas gratuitas para calcular, convertir, crear y organizar desde el navegador."}
@@ -21,9 +21,10 @@
   <title>Toolora | Herramientas útiles, sin complicaciones</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="app.js"></script>
+  <script defer src="app.js?v=5"></script>
+  <script defer src="toolora-guide.js?v=1"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="supabase-config.js?v=1"></script>
   <script defer src="auth.js?v=4"></script>
@@ -33,7 +34,7 @@
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Toolora, inicio"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a>
     <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#sobre">Cómo funciona</a><a href="#mi-toolora">Mi Toolora</a>
+      <a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#sobre">Cómo funciona</a><a href="#mi-toolora">Mi espacio</a><a href="#toolora-guide">Asistente</a><a href="/pro.html">Toolora Pro</a>
     </nav>
     <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><a class="account-button" id="accountButton" href="entrar.html"><span class="account-avatar">◌</span><span id="accountButtonLabel">Entrar</span></a><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
   </header>
@@ -64,6 +65,28 @@
     <section class="proof-line wrap" aria-label="Ventajas de Toolora"><span>HECHO PARA USAR, NO PARA COMPLICAR</span><i></i><span>Sin instalaciones</span><i></i><span>Sin pasos innecesarios</span><i></i><span>En español</span></section>
 
     <section class="trust-strip wrap" id="sobre"><div><span class="trust-symbol">↗</span><strong>Sin registro</strong><span>Empieza de una</span></div><div><span class="trust-symbol">◈</span><strong>Gratis para usar</strong><span>Sin pagar por cada tarea</span></div><div><span class="trust-symbol">⌁</span><strong>En tu navegador</strong><span>Varias herramientas procesan localmente</span></div></section>
+
+
+    <section class="guide-section wrap" id="toolora-guide" aria-labelledby="guideTitle">
+      <div class="guide-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> TOOLORA GUIDE / ASISTENTE</div>
+        <h2 id="guideTitle">Cuéntanos qué necesitas.<br><span>Te mostramos cómo resolverlo.</span></h2>
+        <p>Describe tu tarea con tus propias palabras. Toolora Guide identifica la herramienta más útil y te lleva directamente a ella. Tus consultas se procesan en este dispositivo.</p>
+        <form class="guide-form" id="guideForm">
+          <label class="sr-only" for="guidePrompt">Describe lo que necesitas</label>
+          <input id="guidePrompt" type="search" maxlength="240" placeholder="Ej. necesito calcular el precio para ganar 30%..." autocomplete="off">
+          <button type="submit">Encontrar solución <span>↗</span></button>
+        </form>
+        <div class="guide-examples"><button type="button" data-guide-example="Quiero calcular un descuento del 20%">Calcular un descuento</button><button type="button" data-guide-example="Necesito convertir una imagen a WebP">Convertir una imagen</button><button type="button" data-guide-example="Quiero crear un código QR para un enlace">Crear un QR</button></div>
+        <p class="guide-disclaimer">Asistente de orientación local; no envía tus consultas a un modelo de IA ni sustituye asesoría profesional.</p>
+      </div>
+      <aside class="guide-result" id="guideResult" aria-live="polite">
+        <div class="guide-result-mark">t<span>.</span></div><span class="guide-result-label">TOOLORA GUIDE</span>
+        <h3>Una buena solución empieza por encontrar la herramienta correcta.</h3>
+        <p>Escribe una tarea arriba y te recomendaremos por dónde empezar.</p>
+        <a class="guide-result-link" href="#herramientas">Explorar herramientas <span>↗</span></a>
+      </aside>
+    </section>
 
     <section class="tools-section wrap" id="herramientas">
       <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> HECHAS PARA EL DÍA A DÍA</div><h2>¿Qué vas a resolver <span>hoy?</span></h2></div><p>Pequeñas herramientas que te ahorran tiempo. Elige una y ponte en marcha.</p></div>
@@ -97,6 +120,17 @@
         <button class="tool-card" data-tool="cv" data-category="texto" data-keywords="hoja vida curriculum cv perfil experiencia empleo imprimir pdf">
           <div class="tool-card-top"><span class="tool-icon icon-orange">▤</span><span class="card-arrow">↗</span></div><h3>Creador de hoja de vida</h3><p>Organiza tu perfil y genera una versión limpia lista para imprimir.</p><div class="tool-card-bottom"><span>Texto</span><span class="open-label">Abrir herramienta ↗</span></div>
         </button>
+      </div>
+      <div class="seo-tool-links" aria-label="Guías individuales de herramientas">
+        <span>GUÍAS DE HERRAMIENTAS</span>
+        <a href="/herramientas/calculadora-de-porcentajes.html">Calculadora de porcentajes</a>
+        <a href="/herramientas/utilidades-de-texto.html">Utilidades de texto</a>
+        <a href="/herramientas/generador-de-contrasenas.html">Generador de contraseñas</a>
+        <a href="/herramientas/conversor-de-imagenes.html">Conversor de imágenes</a>
+        <a href="/herramientas/generador-de-codigos-qr.html">Generador de códigos QR</a>
+        <a href="/herramientas/calculadora-de-precios.html">Calculadora de precios</a>
+        <a href="/herramientas/ideas-de-nombres.html">Ideas de nombres</a>
+        <a href="/herramientas/creador-de-hoja-de-vida.html">Creador de hoja de vida</a>
       </div>
       <div class="no-results" id="noResults" hidden><strong>No encontramos esa herramienta.</strong><span>Prueba con otra palabra o cambia el filtro.</span><button id="clearSearch">Ver todas las herramientas</button></div>
     </section>

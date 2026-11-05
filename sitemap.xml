@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://toolora-9jq.pages.dev/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://toolora-9jq.pages.dev/privacidad.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://toolora-9jq.pages.dev/terminos.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/pro.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://toolora-9jq.pages.dev/acerca.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://toolora-9jq.pages.dev/contacto.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/privacidad.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/terminos.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/calculadora-de-porcentajes.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/utilidades-de-texto.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/generador-de-contrasenas.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/conversor-de-imagenes.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/generador-de-codigos-qr.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/calculadora-de-precios.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/ideas-de-nombres.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://toolora-9jq.pages.dev/herramientas/creador-de-hoja-de-vida.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

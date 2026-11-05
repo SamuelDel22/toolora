@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /entrar.html
+Disallow: /registro.html
 Sitemap: https://toolora-9jq.pages.dev/sitemap.xml

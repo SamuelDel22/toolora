@@ -61,3 +61,20 @@ La interfaz admite registro con cualquier correo válido (por ejemplo Gmail o iC
 La cuenta con email y contraseña acepta direcciones Gmail, iCloud y otros proveedores; no es necesario que el usuario use OAuth. Google y Google son accesos externos opcionales y solo funcionarán tras configurar sus credenciales. La sincronización de favoritos e historial usa metadatos del usuario autenticado.
 
 **Antes de publicar:** reemplaza los valores de ejemplo en `supabase-config.js`, prueba confirmación de correo, inicio/cierre de sesión y OAuth en el dominio final, y revisa los textos legales según los servicios finalmente habilitados.
+
+
+## Toolora 5.0 — descubrimiento y crecimiento
+- Se añadieron páginas HTML individuales para las ocho herramientas, con canonical, metadatos Open Graph y datos estructurados `SoftwareApplication`.
+- El sitemap incluye las páginas públicas y las ocho páginas de herramientas. `robots.txt` declara el sitemap y evita indexar las pantallas de acceso/registro.
+- Los botones de las páginas SEO abren la herramienta correspondiente mediante enlaces profundos `/?tool=<id>`.
+- Toolora Guide es un asistente de orientación local basado en reglas y palabras clave. No es un modelo generativo ni envía consultas a un proveedor de IA.
+- El buscador admite el atajo `/` y `Ctrl/Cmd + K`.
+- Toolora Pro es una página informativa de producto en desarrollo. No procesa pagos ni ofrece suscripciones activas.
+- Favoritos e historial continúan en localStorage y pueden sincronizarse mediante los metadatos del usuario autenticado, según la configuración y políticas de Supabase. No se garantiza sincronización hasta probarla en el proyecto publicado.
+
+## Publicación y validación
+1. Sube el contenido de `toolora-main/` a la raíz de la carpeta configurada como raíz del proyecto en Cloudflare Pages.
+2. Comprueba la página principal, las ocho rutas `/herramientas/*.html`, la apertura directa de herramientas y registro/inicio de sesión.
+3. En Search Console envía `https://toolora-9jq.pages.dev/sitemap.xml`. La inclusión y el posicionamiento en Google no son inmediatos ni están garantizados.
+4. Revisa que el dominio de producción siga siendo `toolora-9jq.pages.dev`; si cambia, actualiza canonical, Open Graph, sitemap y robots.
+5. No añadas claves secretas de Supabase ni claves de proveedores de IA al JavaScript del navegador. Para IA generativa real se requiere un backend/Worker con secretos configurados como variables protegidas.

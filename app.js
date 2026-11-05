@@ -50,3 +50,28 @@ function renderPersonalSpace(){const favorites=readList(STORAGE_KEYS.favorites).
 renderPersonalSpace();window.renderTooloraPersonalSpace=renderPersonalSpace;
 $('#themeToggle').addEventListener('click',()=>{document.body.classList.toggle('dark');const dark=document.body.classList.contains('dark');$('#themeToggle').textContent=dark?'☼':'◐';try{localStorage.setItem('toolora-theme',dark?'dark':'light')}catch{}});try{if(localStorage.getItem('toolora-theme')==='dark'){document.body.classList.add('dark');$('#themeToggle').textContent='☼'}}catch{}
 $('#mobileMenu').addEventListener('click',()=>{const nav=$('.desktop-nav'),open=nav.classList.toggle('open');$('#mobileMenu').setAttribute('aria-expanded',String(open));$('#mobileMenu').textContent=open?'×':'☰'});$$('.desktop-nav a').forEach(a=>a.addEventListener('click',()=>{$('.desktop-nav').classList.remove('open');$('#mobileMenu').setAttribute('aria-expanded','false');$('#mobileMenu').textContent='☰'}));
+
+
+// Deep links: open a tool directly from its SEO landing page.
+(() => {
+  const requested = new URLSearchParams(location.search).get('tool');
+  const allowed = ['porcentajes','texto','password','imagenes','qr','precios','nombres','cv'];
+  if (requested && allowed.includes(requested)) {
+    const card = document.querySelector(`.tool-card[data-tool="${requested}"]`);
+    if (card) {
+      document.querySelector('#herramientas')?.scrollIntoView({behavior:'instant',block:'start'});
+      showModal(requested);
+      history.replaceState({}, '', location.pathname + location.hash);
+    }
+  }
+  document.addEventListener('keydown', event => {
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      document.querySelector('#toolSearch')?.focus();
+    }
+    if (event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) {
+      event.preventDefault();
+      document.querySelector('#toolSearch')?.focus();
+    }
+  });
+})();

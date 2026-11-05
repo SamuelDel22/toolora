@@ -311,3 +311,50 @@
  .ws-margin-presets{gap:5px}
  .ws-margin-presets>span{width:100%}
 }
+
+/* Toolora 5.0 — Guide, SEO discovery and product roadmap */
+.guide-section{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center;padding-top:25px;padding-bottom:95px}
+.guide-copy h2{font-size:clamp(34px,4vw,48px);line-height:1.08;letter-spacing:-.065em;margin:16px 0}
+.guide-copy h2 span,.pro-page h1 span{color:#739b2c}
+.guide-copy>p{max-width:570px;color:var(--muted);font-size:12px;line-height:1.85}
+.guide-form{display:flex;gap:8px;margin-top:22px;padding:7px;background:var(--surface);border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow)}
+.guide-form input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:var(--ink);padding:0 12px;font-size:12px}
+.guide-form button{border:0;border-radius:7px;background:var(--ink);color:var(--bg);padding:13px 16px;font-size:11px;font-weight:800;white-space:nowrap}
+.guide-form button span{color:var(--accent);margin-left:8px}
+.guide-examples{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.guide-examples button{border:1px solid var(--line);border-radius:99px;background:transparent;color:var(--muted);padding:7px 10px;font-size:10px}
+.guide-examples button:hover{border-color:#9fbd6b;color:var(--ink)}
+.guide-disclaimer{font-size:9px!important;opacity:.8;margin-top:13px}
+.guide-result{min-height:270px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:27px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:flex-start}
+.guide-result-mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:#1c281c;display:grid;place-items:center;font-size:22px;font-weight:800;margin-bottom:20px}
+.guide-result-mark span{color:#688b2c}
+.guide-result-label{font:500 8px 'DM Mono',monospace;letter-spacing:.13em;color:var(--muted)}
+.guide-result h3{font-size:21px;line-height:1.2;letter-spacing:-.04em;margin:12px 0 8px}
+.guide-result p{font-size:11px;color:var(--muted);line-height:1.8;margin:0 0 18px}
+.guide-result-link{margin-top:auto;font-size:11px;font-weight:800;border-bottom:1px solid var(--accent);padding-bottom:5px}
+.guide-result-link span{color:#739b2c;margin-left:8px}
+.seo-tool-links{display:flex;flex-wrap:wrap;gap:8px 17px;align-items:center;margin:24px 0 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.seo-tool-links>span{font:500 8px 'DM Mono',monospace;letter-spacing:.1em;color:var(--muted);width:100%}
+.seo-tool-links a{font-size:10px;color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.seo-tool-links a:hover{color:var(--ink);text-decoration-color:var(--accent)}
+.seo-tool-main{padding-top:80px;padding-bottom:90px;max-width:920px}
+.seo-tool-main h1,.pro-page h1{font-size:clamp(42px,7vw,72px);line-height:1.02;letter-spacing:-.075em;margin:22px 0}
+.seo-tool-lead,.pro-page>p{max-width:680px;color:var(--muted);font-size:15px;line-height:1.8}
+.seo-tool-panel{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;margin:42px 0;padding:34px;border:1px solid var(--line);background:var(--surface);border-radius:18px;box-shadow:var(--shadow)}
+.seo-tool-icon{width:66px;height:66px;border-radius:18px;background:var(--accent);display:grid;place-items:center;font-size:36px;font-weight:800}
+.seo-tool-panel h2{font-size:23px;letter-spacing:-.04em;margin:10px 0}
+.seo-tool-panel p,.seo-explainer p,.seo-explainer li{color:var(--muted);font-size:13px;line-height:1.9}
+.seo-tool-panel .cta-button{display:inline-flex;margin-top:15px}
+.seo-explainer{max-width:720px}.seo-explainer h2{font-size:22px;letter-spacing:-.04em;margin:32px 0 12px}
+.seo-explainer a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+.pro-page{padding-top:80px;padding-bottom:90px}
+.pro-page h1{max-width:780px}
+.pro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:45px 0 25px}
+.pro-grid article{padding:24px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}
+.pro-grid article>b{font:500 8px 'DM Mono',monospace;color:var(--muted);letter-spacing:.1em}
+.pro-grid h2{font-size:20px;letter-spacing:-.04em;margin:20px 0 8px}
+.pro-grid p{font-size:11px;line-height:1.8;color:var(--muted)}
+.pro-notice{display:flex;flex-direction:column;gap:5px;border-left:3px solid var(--accent);padding:12px 16px;margin:25px 0 30px;background:var(--surface)}
+.pro-notice strong{font-size:12px}.pro-notice span{font-size:11px;color:var(--muted)}
+@media(max-width:760px){.guide-section{grid-template-columns:1fr;gap:22px;padding-bottom:65px}.guide-result{min-height:220px}.guide-form{flex-direction:column}.guide-form input{min-height:42px}.guide-form button{min-height:45px}.seo-tool-main,.pro-page{padding-top:48px}.seo-tool-panel{grid-template-columns:1fr;padding:23px}.pro-grid{grid-template-columns:1fr}.seo-tool-links{gap:10px 14px}.seo-tool-links a{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.guide-result,.guide-form button{transition:none}}

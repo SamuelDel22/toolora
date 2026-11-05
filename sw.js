@@ -1,7 +1,7 @@
-const CACHE_NAME = 'toolora-static-v7';
+const CACHE_NAME = 'toolora-static-v8';
 const APP_SHELL = [
   '/', '/index.html', '/entrar.html', '/registro.html',
-  '/styles.css', '/app.js', '/auth.js', '/supabase-config.js',
+  '/styles.css', '/app.js', '/toolora-guide.js', '/auth.js', '/supabase-config.js',
   '/favicon.svg', '/manifest.webmanifest'
 ];
 
