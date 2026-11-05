@@ -1,17 +1,31 @@
-# Activar registro e inicio de sesión
+# Toolora — conexión de autenticación
 
-La interfaz está preparada para Supabase Auth. Para activar las cuentas reales:
+## Antes de probar
+En `supabase-config.js` deben existir los datos reales del proyecto:
+- `url`: Project URL, por ejemplo `https://xxxxx.supabase.co`
+- `anonKey`: clave pública `anon` o `sb_publishable_...`
 
-1. Crea un proyecto en Supabase.
-2. Copia Project URL y anon/public key desde Project Settings → API.
-3. Pégalos en `supabase-config.js`. La anon key puede estar en el navegador; nunca uses service_role.
-4. En Authentication → URL Configuration, configura Site URL con el dominio Cloudflare Pages y añade también `https://TU-DOMINIO/*` a Redirect URLs.
-5. En Authentication → Providers, habilita Email. Los registros aceptan cualquier proveedor de correo, incluidos Gmail e iCloud. El usuario crea una contraseña para Toolora y confirma su correo si la confirmación está activa.
-6. Para Google, configura el OAuth Client ID/Secret en Google Cloud y Supabase.
-7. Para Google, configura Sign in with Google en Google Developer y añade Service ID, Team ID, Key ID y la clave privada en Supabase. Google requiere cuenta de desarrollador y configuración del dominio/callback.
-8. Configura SMTP personalizado en Supabase para que los mensajes de verificación no dependan del servicio de prueba.
+No uses `service_role` ni una secret key en el navegador.
 
-Los botones Google y Google no pueden autenticar hasta que se completen sus credenciales en los paneles respectivos. Email/contraseña sí funciona al configurar Supabase.
+## Registro por correo
+Supabase → Authentication → Sign In / Providers → Email: habilitado.
+En Authentication → URL Configuration:
+- Site URL: `https://toolora-9jq.pages.dev`
+- Redirect URLs: `https://toolora-9jq.pages.dev/**`
 
+El usuario se registra con correo y contraseña. Si está activa la confirmación de correo, debe abrir el enlace recibido antes de iniciar sesión.
 
-Toolora utiliza pantallas separadas: `entrar.html` para iniciar sesión y `registro.html` para crear una cuenta. El único proveedor OAuth visible es Google. Los correos Gmail, iCloud, Outlook y otros se pueden registrar con correo y contraseña.
+## Google OAuth
+El botón Google no puede autenticar hasta que Google OAuth esté configurado en ambos lados:
+1. Supabase → Authentication → Sign In / Providers → Google: activar.
+2. En Google Cloud Console, crear credenciales OAuth de tipo Web.
+3. En Google Cloud, agregar como Authorized redirect URI la URL exacta que Supabase muestra en el proveedor Google (normalmente `https://<project-ref>.supabase.co/auth/v1/callback`).
+4. Copiar Client ID y Client Secret de Google en el proveedor Google de Supabase y guardar.
+5. En Supabase → Authentication → URL Configuration, mantener `https://toolora-9jq.pages.dev/**` como Redirect URL permitida.
+
+## Comprobación
+- Abrir `/registro.html`, registrar un correo real y verificar el mensaje de estado.
+- Si se exige confirmación, abrir el correo y luego entrar por `/entrar.html`.
+- Abrir `/entrar.html` y probar Google solo después de completar el apartado OAuth.
+
+El código ahora muestra errores concretos en pantalla cuando falta configuración o no se puede cargar el SDK; no oculta los fallos.

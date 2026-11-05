@@ -126,3 +126,8 @@
 }
 @media(max-width:380px){.auth-main{padding-inline:19px}.auth-main h2{font-size:32px}.auth-mobile-brand{margin-bottom:36px}}
 @media(prefers-reduced-motion:reduce){.auth-main .oauth-button,.auth-main .auth-submit{transition:none}}
+
+/* Auth feedback: always visible and readable on mobile */
+.auth-main .auth-message{display:block;min-height:24px;padding:0;margin:14px 0 0;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.auth-main .auth-message.error{color:#ff9b8e}
+.auth-main button:disabled{opacity:.65;cursor:wait}
