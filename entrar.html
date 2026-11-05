@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111611">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Inicia sesión en Toolora.">
+  <title>Inicia sesión | Toolora</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="supabase-config.js"></script>
+  <script defer src="auth.js"></script>
+</head>
+<body class="dark">
+  <main class="auth-page" data-auth-page="login">
+    <aside class="auth-aside">
+      <a class="brand" href="index.html"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a>
+      <div class="auth-aside-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO PERSONAL</div>
+        <h1>Lo útil, siempre a mano.</h1>
+        <p>Un espacio sencillo para guardar tus herramientas favoritas y tenerlas listas cuando las necesites.</p>
+      </div>
+      <div class="auth-aside-foot">Herramientas útiles. Sin complicaciones. · © 2026 Toolora</div>
+    </aside>
+    <section class="auth-main">
+      <div class="auth-main-inner">
+        <a class="auth-back-link" href="index.html">← Volver a Toolora</a>
+        <a class="auth-mobile-brand" href="index.html"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a>
+        <div class="auth-kicker">TU ESPACIO PERSONAL</div>
+        <h2 id="authTitle">Qué bueno tenerte aquí.</h2>
+        <p class="auth-intro">Entra a tu espacio personal y sigue donde lo dejaste.</p>
+        <button class="oauth-button" id="googleAuth" type="button"><span class="google-g">G</span> Continuar con Google</button>
+        <div class="auth-divider"><span>o con tu correo</span></div>
+        <form id="authForm" novalidate>
+          <label class="auth-label" for="authEmail">Correo electrónico</label>
+          <input id="authEmail" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+          <label class="auth-label" for="authPassword">Contraseña</label>
+          <input id="authPassword" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
+          <button class="auth-submit" id="authSubmit" type="submit">Entrar a mi cuenta <span>↗</span></button>
+        </form>
+        <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+        <p class="auth-footnote">Puedes usar Gmail, iCloud, Outlook u otro correo válido. Tu contraseña es exclusiva de Toolora.</p>
+        <p class="auth-switch">¿Todavía no tienes cuenta? <a href="registro.html">Crea una cuenta</a></p>
+        <button class="auth-logout" id="authLogout" type="button" hidden>Cerrar sesión</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

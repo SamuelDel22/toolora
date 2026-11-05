@@ -50,14 +50,14 @@ Abre `index.html` o ejecuta `python -m http.server 8000` y visita `http://localh
 
 
 ## Cuentas Toolora (Supabase Auth)
-La interfaz admite registro con cualquier correo válido (por ejemplo Gmail o iCloud) y contraseña, además de acceso con Google y Apple. La autenticación real requiere configurar Supabase:
+La interfaz admite registro con cualquier correo válido (por ejemplo Gmail o iCloud) y contraseña, además de acceso con Google y Google. La autenticación real requiere configurar Supabase:
 
 1. Crea un proyecto en https://supabase.com/.
 2. En Authentication → URL Configuration, añade el dominio publicado de Toolora a Site URL y Redirect URLs.
 3. Copia Project URL y anon/public key en `supabase-config.js`. Nunca uses la `service_role` key en el navegador.
-4. En Authentication → Providers, activa Email. Para los botones Google y Apple, configura sus credenciales OAuth en Supabase y en cada proveedor.
+4. En Authentication → Providers, activa Email. Para los botones Google y Google, configura sus credenciales OAuth en Supabase y en cada proveedor.
 5. Configura el envío de correos SMTP en Supabase para confirmaciones fiables en producción.
 
-La cuenta con email y contraseña acepta direcciones Gmail, iCloud y otros proveedores; no es necesario que el usuario use OAuth. Google y Apple son accesos externos opcionales y solo funcionarán tras configurar sus credenciales. La sincronización de favoritos e historial usa metadatos del usuario autenticado.
+La cuenta con email y contraseña acepta direcciones Gmail, iCloud y otros proveedores; no es necesario que el usuario use OAuth. Google y Google son accesos externos opcionales y solo funcionarán tras configurar sus credenciales. La sincronización de favoritos e historial usa metadatos del usuario autenticado.
 
 **Antes de publicar:** reemplaza los valores de ejemplo en `supabase-config.js`, prueba confirmación de correo, inicio/cierre de sesión y OAuth en el dominio final, y revisa los textos legales según los servicios finalmente habilitados.

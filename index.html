@@ -116,26 +116,6 @@
       <div class="modal-content" id="modalContent"></div>
     </section>
   </div>
-  <div class="auth-backdrop" id="authModal" hidden>
-    <section class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="authTitle">
-      <button class="auth-close" id="authClose" type="button" aria-label="Cerrar">×</button>
-      <div class="auth-brand"><span class="brand-mark">t<span>.</span></span><span>toolora</span></div>
-      <div class="auth-kicker">TU ESPACIO PERSONAL</div>
-      <h2 id="authTitle">Qué bueno tenerte aquí.</h2>
-      <p class="auth-intro">Entra o crea una cuenta para llevar tus favoritas contigo.</p>
-      <div class="auth-tabs" role="tablist" aria-label="Acceso"><button type="button" class="auth-tab active" data-auth-mode="login" role="tab" aria-selected="true">Iniciar sesión</button><button type="button" class="auth-tab" data-auth-mode="signup" role="tab" aria-selected="false">Crear cuenta</button></div>
-      <div class="oauth-stack"><button class="oauth-button" id="googleAuth" type="button"><span class="google-g">G</span> Continuar con Google</button><button class="oauth-button" id="appleAuth" type="button"><span class="apple-mark">●</span> Continuar con Apple</button></div>
-      <div class="auth-divider"><span>o con tu correo</span></div>
-      <form id="authForm" novalidate>
-        <label class="auth-label" for="authEmail">Correo electrónico</label><input id="authEmail" type="email" autocomplete="email" placeholder="tu@correo.com" required>
-        <label class="auth-label" for="authPassword">Contraseña</label><input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="Mínimo 8 caracteres" required>
-        <button class="auth-submit" id="authSubmit" type="submit">Entrar a mi cuenta <span>↗</span></button>
-      </form>
-      <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
-      <p class="auth-footnote">Puedes usar Gmail, iCloud u otra dirección de correo. Tu correo solo se usa para gestionar tu cuenta.</p>
-      <button class="auth-logout" id="authLogout" type="button" hidden>Cerrar sesión</button>
-    </section>
-  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));}</script>
 </body>
