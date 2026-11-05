@@ -61,3 +61,17 @@ La interfaz admite registro con cualquier correo válido (por ejemplo Gmail o iC
 La cuenta con email y contraseña acepta direcciones Gmail, iCloud y otros proveedores; no es necesario que el usuario use OAuth. Google y Google son accesos externos opcionales y solo funcionarán tras configurar sus credenciales. La sincronización de favoritos e historial usa metadatos del usuario autenticado.
 
 **Antes de publicar:** reemplaza los valores de ejemplo en `supabase-config.js`, prueba confirmación de correo, inicio/cierre de sesión y OAuth en el dominio final, y revisa los textos legales según los servicios finalmente habilitados.
+
+
+## Toolora 4.0 — actualización de experiencia
+
+- Modal de herramientas rediseñado como espacio de trabajo adaptable a móvil.
+- Introducciones breves por herramienta y controles visuales unificados.
+- Texto: formato título y descarga TXT.
+- Contraseñas: mostrar/ocultar y estimación visual de fortaleza.
+- Imágenes: selección y arrastrar/soltar con validación de tamaño y tipo.
+- QR: vista previa presentada en un escenario dedicado.
+- Espacio personal: refresca favoritos e historial al restaurar datos de una sesión.
+- Service Worker actualizado a `toolora-static-v7`.
+
+Las herramientas siguen procesando los datos localmente en el navegador, salvo la autenticación y sincronización de cuenta que usan Supabase.
