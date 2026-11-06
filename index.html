@@ -21,9 +21,9 @@
   <title>Toolora | Herramientas útiles, sin complicaciones</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=5.1">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="app.js?v=5"></script>
+  <script defer src="app.js?v=5.1"></script>
   <script defer src="toolora-guide.js?v=1"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script defer src="supabase-config.js?v=1"></script>
@@ -33,10 +33,10 @@
   <div class="announcement"><span class="announcement-dot"></span> Herramientas gratuitas para hacer más en menos tiempo <span class="announcement-arrow">↗</span></div>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="Toolora, inicio"><span class="brand-mark">t<span>.</span></span><span>toolora</span></a>
-    <nav class="desktop-nav" aria-label="Navegación principal">
+    <nav class="desktop-nav" id="primaryNavigation" aria-label="Navegación principal">
       <a href="#herramientas">Herramientas</a><a href="#categorias">Categorías</a><a href="#sobre">Cómo funciona</a><a href="#mi-toolora">Mi espacio</a><a href="#toolora-guide">Asistente</a><a href="/pro.html">Toolora Pro</a>
     </nav>
-    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><a class="account-button" id="accountButton" href="entrar.html"><span class="account-avatar">◌</span><span id="accountButtonLabel">Entrar</span></a><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
+    <div class="header-actions"><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button><a class="account-button" id="accountButton" href="entrar.html"><span class="account-avatar">◌</span><span id="accountButtonLabel">Entrar</span></a><a class="header-cta" href="#herramientas">Explorar herramientas <span>↗</span></a><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú" aria-expanded="false" aria-controls="primaryNavigation">☰</button></div>
   </header>
   <main id="inicio">
     <section class="hero wrap">
