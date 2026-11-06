@@ -37,6 +37,11 @@ export async function onRequestPost({ request, env }) {
     const topic = url.searchParams.get('type') || body.type || body.topic || '';
     if (!['subscription_preapproval', 'subscription_authorized_payment'].includes(topic)) return json({ received: true, ignored: true });
 
+    // Mercado Pago's dashboard sends a signed synthetic probe using data.id=123456.
+    // Signature is verified above; acknowledge this exact test ID without querying
+    // provider APIs or changing subscription records. Real notifications continue below.
+    if (String(dataId) === '123456') return json({ received: true, test: true });
+
     // Consultar el objeto directamente a Mercado Pago; no confiar en el estado del webhook.
     const endpoint = topic === 'subscription_preapproval'
       ? `https://api.mercadopago.com/preapproval/${encodeURIComponent(dataId)}`
