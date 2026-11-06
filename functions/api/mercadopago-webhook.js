@@ -17,6 +17,21 @@ export async function onRequestPost({ request, env }) {
   try {
     const url = new URL(request.url);
     const body = await request.json().catch(() => ({}));
+
+    // Mercado Pago's dashboard connection check can send this fixed sample
+    // notification without the signed headers used for real webhook deliveries.
+    // Acknowledge only this exact sample; never use it to update subscription data.
+    const isDashboardProbe =
+      body?.action === 'updated' &&
+      String(body?.application_id || '') === '3208894119658751' &&
+      String(body?.entity || '') === 'preapproval' &&
+      String(body?.data?.id || '') === '123456' &&
+      String(body?.id || '') === '123456' &&
+      String(body?.type || '') === 'subscription_preapproval' &&
+      Number(body?.version) === 8 &&
+      !request.headers.get('x-signature');
+    if (isDashboardProbe) return json({ received: true, test: true });
+
     const dataId = url.searchParams.get('data.id') || url.searchParams.get('id') || body?.data?.id;
     if (!await validSignature(request, env.MP_WEBHOOK_SECRET, dataId)) return json({ error: 'Firma no válida.' }, 401);
     const topic = url.searchParams.get('type') || body.type || body.topic || '';
